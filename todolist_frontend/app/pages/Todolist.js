@@ -4,12 +4,9 @@ import Filter from "../components/Filter";
 import Form from "../components/Form";
 import ListTodo from "../components/ListTodo";
 
-export default function Todolist() {
-        const [age, setAge] = React.useState('');
 
-        const handleChange = (event) => {
-          setAge(event.target.value);
-        };
+export default function Todolist() {
+    
   return (
     <main className="flex bg-white dark:bg-black min-h-screen flex-col  justify-center items-center p-24">
        <div  className='container flex items-center justify-center  place-content-center '>
@@ -22,7 +19,7 @@ export default function Todolist() {
                   <div class="h-px my-4 bg-gray-200 border-0 "></div>
                   <Filter/>
                  <div className='todo-box'> 
-                    <ListTodo/>
+                  <ListTodo/>
                  </div>
               </div>
              </div>

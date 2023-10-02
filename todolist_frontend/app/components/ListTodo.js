@@ -11,9 +11,15 @@ import Checkbox from '@mui/material/Checkbox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen ,faClock, faTrash} from '@fortawesome/free-solid-svg-icons'
 import Button from '@mui/material/Button';
-
+import { useSelector } from 'react-redux';
+import { todoListSelector } from '../redux/selector';
 
 export default function ListTodo() {
+    const todoList =  useSelector(todoListSelector)
+
+
+    console.log(todoList);
+
 
     return (
         <div className="w-full p-1">
@@ -21,40 +27,23 @@ export default function ListTodo() {
 
                 <nav aria-label="secondary mailbox folders">
                     <List>
-                    <ListItem >
-                        <ListItemButton >
-                            <FormControlLabel control={<Checkbox />} sx={{ fontSize: 40 }} label="Learn Javascipt" className='w-full' />
-                        </ListItemButton>
-                        <div className='p-2'>
-                            <Button variant="text" className='text-orange-500'><FontAwesomeIcon icon={faClock} className='m-1'/> 28th Jun 2020</Button>
-                        </div>
-                        <div className='todo-detail flex flex-col justify-end'>
-                            <ListItemIcon className='group_action flex flex-row justify-end'>
-                                <FontAwesomeIcon icon={faPen}  className='group_action__item red'/>
-                                <FontAwesomeIcon icon={faTrash} className='group_action__item blue'/>
-                            </ListItemIcon>
-                            <ListItemText primary="28th Jun 2020" className='text-gray-500' />
-                        </div>
+                        {todoList.map(item=> 
+                            <ListItem >
+                                <ListItemButton >
+                                    <FormControlLabel control={<Checkbox />} sx={{ fontSize: 40 }} label= {item.name} className='w-full' />
+                                </ListItemButton>
+                                <div className='p-2'>
+                                    <Button variant="text" className='text-orange-500'><FontAwesomeIcon icon={faClock} className='m-1'/> 28th Jun 2020</Button>
+                                </div>
+                                <div className='todo-detail flex flex-col justify-end'>
+                                    <ListItemIcon className='group_action flex flex-row justify-end'>
+                                        <FontAwesomeIcon icon={faPen}  className='group_action__item red'/>
+                                        <FontAwesomeIcon icon={faTrash} className='group_action__item blue'/>
+                                    </ListItemIcon>
+                                    <ListItemText primary="28th Jun 2020" className='text-gray-500' />
+                                </div>
 
-                    </ListItem>
-
-
-                    <ListItem >
-                        <ListItemButton >
-                            <FormControlLabel control={<Checkbox />} sx={{ fontSize: 40 }} label="Learn C#" className='w-full' />
-                        </ListItemButton>
-                        <div className='p-2'>
-                            <Button variant="text" className='text-orange-500'><FontAwesomeIcon icon={faClock} className='m-1'/> 28th Jun 2020</Button>
-                        </div>
-                        <div className='todo-detail flex flex-col justify-end'>
-                            <ListItemIcon className='group_action flex flex-row justify-end'>
-                                <FontAwesomeIcon icon={faPen}  className='group_action__item red'/>
-                                <FontAwesomeIcon icon={faTrash} className='group_action__item blue'/>
-                            </ListItemIcon>
-                            <ListItemText primary="28th Jun 2020" className='text-gray-500' />
-                        </div>
-
-                    </ListItem>
+                            </ListItem>)}
                     </List>
                 </nav>
                 </Box>

@@ -4,13 +4,21 @@ import React ,{useState}from "react";
 import { Input,Button ,IconButton } from "@material-tailwind/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendar ,faFilter} from '@fortawesome/free-solid-svg-icons'
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo } from "../redux/action";
+import uuid from 'react-uuid'
 export default function Form() {
+    const dispatch =  useDispatch();
+   
     const [todoValue, setTodoValue]=useState('');
-    console.log(todoValue);
+
+
     const handleSubmit=(e)=>{
-        console.log("todoValue",todoValue);
+        dispatch(addTodo({
+          name:todoValue,
+          completed:false,
+          id:uuid(),
+        }))
     }
     return (
       <form className='form-group custom-form' onSubmit={handleSubmit}>
@@ -36,7 +44,7 @@ export default function Form() {
         <Button
           size="sm"
           color={"blue-gray"}
-          type="submit"
+          onClick={handleSubmit}
           className="h-full bg-blue-500 hover:bg-blue-700 text-white font-bold  rounded text-lg"
         >
           Add
