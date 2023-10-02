@@ -23,7 +23,7 @@ export default function ListTodo() {
                     <List>
                     <ListItem >
                         <ListItemButton >
-                            <FormControlLabel control={<Checkbox defaultChecked />} sx={{ fontSize: 40 }} label="Learn Javascipt" className='w-full' />
+                            <FormControlLabel control={<Checkbox />} sx={{ fontSize: 40 }} label="Learn Javascipt" className='w-full' />
                         </ListItemButton>
                         <div className='p-2'>
                             <Button variant="text" className='text-orange-500'><FontAwesomeIcon icon={faClock} className='m-1'/> 28th Jun 2020</Button>
@@ -41,7 +41,7 @@ export default function ListTodo() {
 
                     <ListItem >
                         <ListItemButton >
-                            <FormControlLabel control={<Checkbox defaultChecked />} sx={{ fontSize: 40 }} label="Learn C#" className='w-full' />
+                            <FormControlLabel control={<Checkbox />} sx={{ fontSize: 40 }} label="Learn C#" className='w-full' />
                         </ListItemButton>
                         <div className='p-2'>
                             <Button variant="text" className='text-orange-500'><FontAwesomeIcon icon={faClock} className='m-1'/> 28th Jun 2020</Button>

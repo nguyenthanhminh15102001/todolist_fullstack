@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
-import Filter from "./components/Filter";
-import Form from "./components/Form";
-import Todo from "./components/Todo";
+import Filter from "../components/Filter";
+import Form from "../components/Form";
+import ListTodo from "../components/ListTodo";
 
 export default function Todolist() {
         const [age, setAge] = React.useState('');
@@ -22,7 +22,7 @@ export default function Todolist() {
                   <div class="h-px my-4 bg-gray-200 border-0 "></div>
                   <Filter/>
                  <div className='todo-box'> 
-                    <Todo/>
+                    <ListTodo/>
                  </div>
               </div>
              </div>
