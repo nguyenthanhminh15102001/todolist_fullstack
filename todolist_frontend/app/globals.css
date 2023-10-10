@@ -25,3 +25,15 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.group_action__item {
+  padding:  0 10px;
+
+}
+.red {
+  color: red;
+}
+.blue {
+  color: rgb(61, 158, 202);
+}
